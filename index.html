@@ -62,88 +62,34 @@
 
         h2 { margin-bottom: 20px; font-size: 1.5rem; color: #0f172a; text-align: center; }
 
-        /* --- МЕНЮ (ВКЛАДКИ) --- */
+        /* МЕНЮ (ВКЛАДКИ) */
         .mode-selector {
-            display: flex;
-            background-color: #f1f5f9;
-            border-radius: 12px;
-            padding: 6px;
-            margin-bottom: 24px;
+            display: flex; background-color: #f1f5f9; border-radius: 12px;
+            padding: 6px; margin-bottom: 24px;
         }
         
         .mode-btn {
-            flex: 1;
-            padding: 12px;
-            text-align: center;
-            border: none;
-            background: transparent;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: all 0.2s ease;
+            flex: 1; padding: 12px; text-align: center; border: none;
+            background: transparent; border-radius: 8px; font-size: 0.95rem;
+            font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.2s ease;
         }
-
-        .mode-btn.active {
-            background-color: white;
-            color: var(--primary);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
+        .mode-btn.active { background-color: white; color: var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
         .mode-content { display: none; animation: fadeIn 0.3s; }
         .mode-content.active { display: block; }
 
-        /* --- ВЫБОР КОНСТРУКЦИЙ (ГРУППИРОВКА И ТЕГИ) --- */
-        #constructs-list {
-            display: block; /* Изменил на block для вертикальной группировки */
-            max-height: 350px;
-            overflow-y: auto;
-            padding: 5px 15px 5px 5px; /* Чуть отступа для скроллбара */
-        }
-
-        .lesson-group {
-            margin-bottom: 24px;
-            background: #f8fafc;
-            padding: 16px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .lesson-group-title {
-            font-size: 1.05rem;
-            color: #334155;
-            margin-bottom: 14px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .lesson-group-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
+        /* ВЫБОР КОНСТРУКЦИЙ */
+        #constructs-list { display: block; max-height: 350px; overflow-y: auto; padding: 5px 15px 5px 5px; }
+        .lesson-group { margin-bottom: 24px; background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .lesson-group-title { font-size: 1.05rem; color: #334155; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+        .lesson-group-chips { display: flex; flex-wrap: wrap; gap: 10px; }
         .chip-checkbox { display: inline-block; cursor: pointer; }
         .chip-checkbox input { display: none; }
         .chip-checkbox span {
-            display: block;
-            padding: 8px 16px;
-            background: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            transition: all 0.2s;
+            display: block; padding: 8px 16px; background: white; border: 2px solid #e2e8f0;
+            border-radius: 20px; font-size: 0.9rem; color: var(--text-main); transition: all 0.2s;
         }
         .chip-checkbox:hover span { border-color: #cbd5e1; background: #f8fafc; }
-        .chip-checkbox input:checked + span {
-            background-color: #e0e7ff;
-            border-color: var(--primary);
-            color: var(--primary);
-            font-weight: 600;
-        }
-
+        .chip-checkbox input:checked + span { background-color: #e0e7ff; border-color: var(--primary); color: var(--primary); font-weight: 600; }
         .loader { text-align: center; color: var(--text-muted); font-weight: 500; padding: 20px; width: 100%; }
 
         /* Формы и кнопки */
@@ -154,19 +100,18 @@
             border-radius: 8px; font-size: 1rem; font-family: inherit; outline: none; transition: 0.2s;
         }
         select:focus, input:focus { border-color: var(--primary); }
-        
         .range-container { display: flex; gap: 15px; }
         .range-container .form-group { flex: 1; }
 
         .btn {
-            display: inline-block; background-color: var(--primary); color: white;
-            border: none; padding: 14px 32px; font-size: 1rem; font-weight: 600;
-            border-radius: 30px; cursor: pointer; transition: all 0.2s ease; text-align: center;
+            display: inline-block; background-color: var(--primary); color: white; border: none;
+            padding: 14px 32px; font-size: 1rem; font-weight: 600; border-radius: 30px;
+            cursor: pointer; transition: all 0.2s ease; text-align: center; width: 100%;
         }
         .btn:hover { background-color: var(--primary-hover); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); }
-        .btn-secondary { background-color: #e2e8f0; color: #475569; margin-right: 10px; }
+        .btn-secondary { background-color: #e2e8f0; color: #475569; margin-right: 10px; width: auto; }
         .btn-secondary:hover { background-color: #cbd5e1; box-shadow: none; transform: none; }
-        .btn-admin { background-color: #0f172a; margin-top: 20px; width: 100%; }
+        .btn-admin { background-color: #0f172a; margin-top: 20px; }
         .btn-admin:hover { background-color: #1e293b; }
 
         /* Стили квиза */
@@ -174,7 +119,6 @@
         .grammar-tag { display: inline-block; background-color: #e0e7ff; color: #3730a3; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-bottom: 14px; }
         .question-text { font-size: 1.15rem; font-weight: 500; margin-bottom: 16px; }
         .options-grid { display: flex; flex-direction: column; gap: 10px; }
-        
         .option-btn { background-color: #f1f5f9; border: 2px solid transparent; padding: 12px 16px; border-radius: 8px; font-size: 1rem; text-align: left; cursor: pointer; transition: all 0.2s; }
         .option-btn:hover:not(:disabled) { background-color: #e2e8f0; }
         .option-btn.selected { border-color: var(--primary); background-color: #e0e7ff; color: var(--primary); }
@@ -193,7 +137,7 @@
         .val-wrong { color: #dc2626; }
         .val-percent { color: var(--primary); }
 
-        /* Скроллбар для эстетики */
+        /* Скроллбар */
         #constructs-list::-webkit-scrollbar { width: 6px; }
         #constructs-list::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
         #constructs-list::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
@@ -206,7 +150,7 @@
 
     <header>
         <h1>Квиз по грамматике N2</h1>
-        <p>Специально для дорогой Сонечки</p>
+        <p>Специально для дорогой Сонечки!</p>
     </header>
 
     <div class="container">
@@ -223,7 +167,9 @@
 
                 <div id="mode-single" class="mode-content active">
                     <div class="form-group">
-                        <select id="single-lesson"></select>
+                        <select id="single-lesson">
+                            <option value="0">⏳ Сканирование базы...</option>
+                        </select>
                     </div>
                 </div>
 
@@ -231,22 +177,21 @@
                     <div class="range-container">
                         <div class="form-group">
                             <label for="range-start">От:</label>
-                            <select id="range-start"></select>
+                            <select id="range-start"><option value="0">⏳</option></select>
                         </div>
                         <div class="form-group">
                             <label for="range-end">До:</label>
-                            <select id="range-end"></select>
+                            <select id="range-end"><option value="0">⏳</option></select>
                         </div>
                     </div>
                 </div>
 
                 <div id="mode-constructs" class="mode-content">
                     <p style="margin-bottom: 15px; font-weight: 500; color: var(--text-muted);">Выберите конструкции для повторения:</p>
-                    <div id="constructs-list">
-                        </div>
+                    <div id="constructs-list"></div>
                 </div>
 
-                <button class="btn" style="width: 100%; margin-top: 15px;" onclick="startQuiz()">Начать тест</button>
+                <button class="btn" style="margin-top: 15px;" onclick="startQuiz()">Начать тест</button>
             </div>
 
             <button class="btn btn-admin" onclick="openAdmin()">⚙️ Панель администратора</button>
@@ -261,7 +206,7 @@
             <div id="quiz-questions"></div>
 
             <div style="text-align: center; margin-top: 30px;">
-                <button id="submit-btn" class="btn" onclick="checkAnswers()">Проверить ответы</button>
+                <button id="submit-btn" class="btn" style="width:auto; padding: 14px 40px;" onclick="checkAnswers()">Проверить ответы</button>
             </div>
 
             <div id="result-box" class="card" style="display: none; margin-top: 30px; text-align: center;">
@@ -283,9 +228,9 @@
                 <div class="form-group"><label>Номер урока (1-18):</label><input type="number" id="admin-lesson-num" min="1" max="18" value="1"></div>
                 <div class="form-group"><label>Файл урока (.json):</label><input type="file" id="json-file" accept=".json"></div>
                 <button class="btn" onclick="uploadJsonFile()">Сохранить урок</button>
-                <button class="btn btn-secondary" onclick="clearLocalCache()" style="background-color: #fee2e2; color: #991b1b;">Сбросить кэш</button>
+                <button class="btn btn-secondary" onclick="clearLocalCache()" style="background-color: #fee2e2; color: #991b1b; margin-top: 15px; width: 100%;">Сбросить кэш памяти</button>
             </div>
-            <button class="btn btn-secondary" onclick="switchView('view-menu')">↩ В меню</button>
+            <button class="btn btn-secondary" style="width: 100%;" onclick="switchView('view-menu')">↩ В меню</button>
         </div>
 
     </div>
@@ -296,27 +241,13 @@
         
         let currentMode = 'single';
         let activeQuestions = [];
-        let allAvailableQuestions = []; // Кэш для поиска по конструкциям
+        let allAvailableQuestions = []; 
         let userAnswers = {};
         let constructsLoaded = false;
 
         document.addEventListener("DOMContentLoaded", () => {
-            initMenuSelectors();
+            initAvailableLessons(); // Запускаем умный сканер при старте
         });
-
-        function initMenuSelectors() {
-            const singleSelect = document.getElementById('single-lesson');
-            const startSelect = document.getElementById('range-start');
-            const endSelect = document.getElementById('range-end');
-
-            singleSelect.innerHTML = `<option value="0">-- Выберите урок --</option>`;
-            for(let i = 1; i <= TOTAL_LESSONS; i++) {
-                const opt = `<option value="${i}">Урок ${i}</option>`;
-                singleSelect.innerHTML += opt;
-                startSelect.innerHTML += opt;
-                endSelect.innerHTML += `<option value="${i}" ${i === TOTAL_LESSONS ? 'selected' : ''}>Урок ${i}</option>`;
-            }
-        }
 
         function switchView(viewId) {
             document.querySelectorAll('.view').forEach(view => view.classList.remove('active'));
@@ -326,7 +257,6 @@
 
         function setMode(mode, btnElement) {
             currentMode = mode;
-            
             document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
 
@@ -338,71 +268,50 @@
             }
         }
 
-        // --- НОВАЯ ФУНКЦИЯ: Группировка конструкций по урокам ---
-        async function loadConstructs() {
-            const container = document.getElementById('constructs-list');
-            container.innerHTML = '<div class="loader">🔍 Сканируем базу уроков...</div>';
+        // --- УМНЫЙ СКАНЕР УРОКОВ ---
+        async function initAvailableLessons() {
+            const singleSelect = document.getElementById('single-lesson');
+            const startSelect = document.getElementById('range-start');
+            const endSelect = document.getElementById('range-end');
+
+            singleSelect.innerHTML = `<option value="0">⏳ Сканирование базы...</option>`;
+            startSelect.innerHTML = `<option value="0">⏳</option>`;
+            endSelect.innerHTML = `<option value="0">⏳</option>`;
 
             let promises = [];
-            for (let i = 1; i <= TOTAL_LESSONS; i++) {
-                // Возвращаем объект с номером урока и его данными, чтобы знать кто есть кто
-                promises.push(fetchLessonData(i).then(data => ({ lessonNum: i, data: data })));
+            for(let i = 1; i <= TOTAL_LESSONS; i++) {
+                promises.push(fetchLessonData(i).then(data => ({ num: i, data: data })));
             }
 
+            // Ждем завершения всех проверок
             const results = await Promise.all(promises);
-            allAvailableQuestions = [];
             
-            let htmlContent = '';
-            let hasData = false;
+            // Фильтруем только те, где реально есть данные и вопросы
+            const availableLessons = results.filter(r => r.data && r.data.questions && r.data.questions.length > 0);
 
-            results.forEach(result => {
-                const { lessonNum, data } = result;
-                
-                // Если данные загрузились и в них есть вопросы
-                if (data && data.questions && data.questions.length > 0) {
-                    hasData = true;
-                    allAvailableQuestions = allAvailableQuestions.concat(data.questions);
-                    
-                    // Выцепляем уникальные грамматики ИМЕННО ДЛЯ ЭТОГО УРОКА
-                    let uniqueConstructs = new Set();
-                    data.questions.forEach(q => {
-                        if (q.grammar) uniqueConstructs.add(q.grammar);
-                    });
-
-                    // Если в уроке есть конструкции, создаем визуальный блок (группу)
-                    if (uniqueConstructs.size > 0) {
-                        const lessonTitle = data.lesson_title ? data.lesson_title : `Урок ${lessonNum}`;
-                        
-                        htmlContent += `
-                            <div class="lesson-group">
-                                <h4 class="lesson-group-title">${lessonTitle}</h4>
-                                <div class="lesson-group-chips">
-                        `;
-                        
-                        Array.from(uniqueConstructs).sort().forEach(grammar => {
-                            htmlContent += `
-                                <label class="chip-checkbox">
-                                    <input type="checkbox" value="${grammar}">
-                                    <span>${grammar}</span>
-                                </label>
-                            `;
-                        });
-
-                        htmlContent += `
-                                </div>
-                            </div>
-                        `;
-                    }
-                }
-            });
-
-            if (!hasData) {
-                container.innerHTML = '<div style="color: #9f1239; text-align: center; padding: 20px;">Уроки не найдены. Добавьте файлы в базу.</div>';
+            if (availableLessons.length === 0) {
+                singleSelect.innerHTML = `<option value="0">База пуста (Добавьте уроки)</option>`;
+                startSelect.innerHTML = `<option value="0">-</option>`;
+                endSelect.innerHTML = `<option value="0">-</option>`;
                 return;
             }
 
-            container.innerHTML = htmlContent;
-            constructsLoaded = true;
+            // Если уроки найдены - строим списки
+            singleSelect.innerHTML = `<option value="0">-- Выберите урок --</option>`;
+            startSelect.innerHTML = '';
+            endSelect.innerHTML = '';
+
+            availableLessons.forEach((item, index) => {
+                const title = item.data.lesson_title ? item.data.lesson_title : `Урок ${item.num}`;
+                const opt = `<option value="${item.num}">${title}</option>`;
+                
+                singleSelect.innerHTML += opt;
+                startSelect.innerHTML += opt;
+                
+                // Для диапазона "До" по умолчанию выбираем последний доступный
+                const isLast = index === availableLessons.length - 1 ? 'selected' : '';
+                endSelect.innerHTML += `<option value="${item.num}" ${isLast}>${title}</option>`;
+            });
         }
 
         async function fetchLessonData(lessonNumber) {
@@ -418,6 +327,52 @@
             }
         }
 
+        // --- ГРУППИРОВКА КОНСТРУКЦИЙ ---
+        async function loadConstructs() {
+            const container = document.getElementById('constructs-list');
+            container.innerHTML = '<div class="loader">🔍 Сбор конструкций...</div>';
+
+            let promises = [];
+            for (let i = 1; i <= TOTAL_LESSONS; i++) {
+                promises.push(fetchLessonData(i).then(data => ({ lessonNum: i, data: data })));
+            }
+
+            const results = await Promise.all(promises);
+            allAvailableQuestions = [];
+            
+            let htmlContent = '';
+            let hasData = false;
+
+            results.forEach(result => {
+                const { lessonNum, data } = result;
+                if (data && data.questions && data.questions.length > 0) {
+                    hasData = true;
+                    allAvailableQuestions = allAvailableQuestions.concat(data.questions);
+                    
+                    let uniqueConstructs = new Set();
+                    data.questions.forEach(q => { if (q.grammar) uniqueConstructs.add(q.grammar); });
+
+                    if (uniqueConstructs.size > 0) {
+                        const lessonTitle = data.lesson_title ? data.lesson_title : `Урок ${lessonNum}`;
+                        htmlContent += `<div class="lesson-group"><h4 class="lesson-group-title">${lessonTitle}</h4><div class="lesson-group-chips">`;
+                        Array.from(uniqueConstructs).sort().forEach(grammar => {
+                            htmlContent += `<label class="chip-checkbox"><input type="checkbox" value="${grammar}"><span>${grammar}</span></label>`;
+                        });
+                        htmlContent += `</div></div>`;
+                    }
+                }
+            });
+
+            if (!hasData) {
+                container.innerHTML = '<div style="color: #9f1239; text-align: center; padding: 20px;">База пуста.</div>';
+                return;
+            }
+
+            container.innerHTML = htmlContent;
+            constructsLoaded = true;
+        }
+
+        // --- ЗАПУСК ТЕСТА ---
         async function startQuiz() {
             activeQuestions = [];
             userAnswers = {};
@@ -429,11 +384,12 @@
                 if (lessonNum === 0) return alert("Пожалуйста, выберите урок.");
                 const data = await fetchLessonData(lessonNum);
                 if (data) activeQuestions = data.questions;
-                document.getElementById('quiz-title').innerText = `Урок ${lessonNum}`;
+                document.getElementById('quiz-title').innerText = data.lesson_title ? data.lesson_title : `Урок ${lessonNum}`;
             } 
             else if (currentMode === 'range') {
                 const start = parseInt(document.getElementById('range-start').value);
                 const end = parseInt(document.getElementById('range-end').value);
+                if (start === 0 || end === 0) return alert("База пуста, нечего запускать.");
                 if (start > end) return alert("Начало диапазона не может быть больше конца!");
                 
                 for (let i = start; i <= end; i++) {
@@ -447,7 +403,6 @@
                 if (checkedBoxes.length === 0) return alert("Выберите хотя бы одну конструкцию.");
                 
                 const selectedGrammar = Array.from(checkedBoxes).map(cb => cb.value);
-                
                 activeQuestions = allAvailableQuestions.filter(q => selectedGrammar.includes(q.grammar));
                 document.getElementById('quiz-title').innerText = `Тренировка: Выбранные конструкции`;
             }
@@ -547,7 +502,7 @@
             else if (pass !== null) alert("Неверный пароль!");
         }
 
-        window.uploadJsonFile = function() {
+        window.uploadJsonFile = async function() {
             const fileInput = document.getElementById('json-file');
             const lessonNum = parseInt(document.getElementById('admin-lesson-num').value);
 
@@ -555,14 +510,18 @@
             if (fileInput.files.length === 0) return alert("Выберите файл .json");
 
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = async function(e) {
                 try {
                     const json = JSON.parse(e.target.result);
                     if (!json.questions || !Array.isArray(json.questions)) throw new Error("Нет массива questions.");
+                    
                     localStorage.setItem(`cached_lesson_${lessonNum}`, JSON.stringify(json));
                     constructsLoaded = false; 
                     alert(`Урок ${lessonNum} сохранен.`);
                     fileInput.value = '';
+                    
+                    // Обновляем выпадающие списки с учетом нового урока!
+                    await initAvailableLessons(); 
                     switchView('view-menu');
                 } catch (err) {
                     alert("Ошибка JSON: " + err.message);
@@ -571,11 +530,14 @@
             reader.readAsText(fileInput.files[0]);
         }
 
-        window.clearLocalCache = function() {
+        window.clearLocalCache = async function() {
             if(confirm("Удалить все локальные уроки?")) {
                 for(let i=1; i<=TOTAL_LESSONS; i++) localStorage.removeItem(`cached_lesson_${i}`);
                 constructsLoaded = false; 
                 alert("Кэш очищен.");
+                
+                // Обновляем списки после удаления!
+                await initAvailableLessons();
                 switchView('view-menu');
             }
         }
